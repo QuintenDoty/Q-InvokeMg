@@ -64,40 +64,23 @@ Get-QMgUser -Find John
 ___
 
 ### Connect-Now
+````powershell
+Connect-Now
+Please provide Access Token:
+````
 ___
 
 ### Update-QMgUser
+**Sample Input**
+````powershell
+Update-QMgUser -Mail John.Smith@Company.com -Parameter jobTitle -newValue 'Computer Engineer'
+````
 ___
 
 ### Update-QMgUserCSV
+**Sample Input**
 
-___
-
-### Update-MgManager
-Use graph(Update-MgUserManager) to update manager by simply entering username and manager username.
-
-### Get-Email-User-List
-Use Graph to get list of users in an Email. Working to ensure this encompasses all Email type options.
-
-
-### Get-User-Info 
-Use Graph(Get-MgUser) to pull user information including: Name, Email, Department, Job title, manager and Id(Graph)
-
-**Sample input:**
 ````powershell
-Get-User-Info -Username John.Smith
+Update-QMgUserCSV -csvFile c:\temp\UserUpdate1_1_24.csv -OutFile c:\temp\UserUpdate1_1_24_Log.txt -parameterCount 1
 ````
-**Sample Output::**
-
-    DisplayName : John Smith
-    Mail        : John.Smith@Company.com
-    JobTitle    : Computer Technician
-    Department  : IT
-    Id          : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
-    Manager Info:
-    DisplayName : Mark Johnson 
-    Mail        : Mark.Johnson@Company.com
-    JobTitle    : Manager
-    Department  : IT
-    Id          : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+*This example illustrates a csv that would update only one parameter for however many users are in the csv.*
