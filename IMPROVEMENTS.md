@@ -2,10 +2,25 @@
 
 ***Ideas and improvements:***
 
-*Add different search parameters instead of only Mail*~~
-    ~~*Display name -like*~~ *Added -find parameter*
+
+
+*Add -Id parameter to search by ID*
 
 *Fix -CustomParameters for result returns -- See issues*
+
+
+*Add -MemberOf switch to gather all groups user is apart of.*
+
+*Add -Licenses switch to gather list of licenses that user is assigned.*
+
+~~*add -Manager switch so manager only outputs on*~~ --Sticking with -Less option. If you do not want manager info, mark with -Less.
+
+~~*Add different search parameters instead of only Mail*~~
+    ~~*Display name -like*~~ *Added -find parameter*
+
+
+---
+
 
 
 ### Update-MgManager
@@ -18,12 +33,9 @@
 
 ~~*Add switch -includeAll to get all information from user, not just what is provided above.*~~ **DONE!**
 
-*add -includeManager switch for more information on manager.* 
-    Maybe can use -No manager instead.
 
 
-
-# Further projects:
+# Future additons:
 
 ### New-MgUserCreation
 
@@ -36,11 +48,11 @@ Help assist in user creation, might not be needed. Have not investigated yet.(12
 
 -See -find under Get-QMgUser.
 
+---
 
 #### **Light to-do's:**
 
-*WARNING: Some imported command names contain one or more of the following restricted characters: # , ( ) {{ }} [ ] & - / \ $ ^ ; : " ' < > | ? @ ` * % + = ~*
-*create commands to correct this*
+
 
 *Write an import script that will copy module to all module folders.*
 
@@ -59,6 +71,8 @@ $env:psmodulepath -split ';'
 
 *Same for scratch user and Email domain.*
 
+~~*WARNING: Some imported command names contain one or more of the following restricted characters: # , ( ) {{ }} [ ] & - / \ $ ^ ; : " ' < > | ? @ ` * % + = ~*
+*create commands to correct this*~~ - Corrected by removing multiple - in commands created. Powershell utilizes a standard of Verb-Noun.
 
 
 

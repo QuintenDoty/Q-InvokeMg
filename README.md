@@ -1,6 +1,6 @@
 # Description
 
-The reason that this repository was created is I found while using ````Get-MgUser```` & ````Update-MgUser ````, I ran into certain data points that I could not gather or update. To mitigate this, I began using Invoke-MgGraphRequest. I wanted to be able to share these methods with colleagues and here we are. Soon enough, it more than anything became a learning experience on how to create PowerShell functions and modules and get it published. Crazy how easy it is to just get a package up on PSGallery.
+The reason that this repository was created is I found while using ````Get-MgUser```` & ````Update-MgUser````, I ran into certain data points that I could not gather or update. To mitigate this, I began using Invoke-MgGraphRequest. I wanted to be able to share these methods with colleagues and here we are. Soon enough, it more than anything became a learning experience on how to create PowerShell functions and modules and get it published. Crazy how easy it is to just get a package up on PSGallery.
 
 Here is PSGallery Link: https://www.powershellgallery.com/packages/Q-InvokeMg
 
@@ -64,6 +64,11 @@ Get-QMgUser -Find John
 ___
 
 ### Connect-Now
+
+I get my access token from the Graph Explorer page under the 'access token' section. Copy your access token after applying User.Read.All and User.ReadWrite.All at least. You can also select User.Read.All only, however you will not have the ability to run Update-QMgUser as it requires the User.ReadWrite.All permission.
+
+This will capture your access token as a secured string and connect to MgGraph using Connect-MgGraph
+
 ````powershell
 Connect-Now
 Please provide Access Token:
@@ -71,9 +76,18 @@ Please provide Access Token:
 ___
 
 ### Update-QMgUser
+
+You are able to update up to four parameters at one time using this command. Below are two examples with up to two parameters being edited.
+
+You can continue up to Parameter4 & newValue4
+
 **Sample Input**
 ````powershell
 Update-QMgUser -Mail John.Smith@Company.com -Parameter jobTitle -newValue 'Computer Engineer'
+````
+````powershell
+Update-QMgUser -Mail John.Smith@Company.com -Parameter jobTitle -newValue 'Computer Engineer' `
+-Parameter2 department -newValue2 'Infrastructure'
 ````
 ___
 
